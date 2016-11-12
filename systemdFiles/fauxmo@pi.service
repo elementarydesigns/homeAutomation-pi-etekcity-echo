@@ -1,0 +1,12 @@
+[Unit]
+Description=Flask Server
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+ExecStartPre=source /home/pi/projects/fauxmo/venv/bin/activate
+ExecStart=/home/pi/projects/fauxmo/startfauxmo
+
+[Install]
+WantedBy=multi-user.target

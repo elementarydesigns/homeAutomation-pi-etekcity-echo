@@ -1,0 +1,38 @@
+{
+    "FAUXMO": {
+        "ip_address": "auto"
+    },
+    "DEVICES": [
+        {
+            "port": 12340,
+            "handler": {
+                "on_cmd": "http://127.0.0.1:5000/FAMILYROOM/LIGHTSWITCH/5512451",
+                "off_cmd": "http://127.0.0.1:5000/FAMILYROOM/LIGHTSWITCH/5512460",
+                "method": "GET"
+            },
+            "description": "Family Room Light"
+        },
+        {
+            "port": 12341,
+            "handler": {
+                "on_cmd": "http://127.0.0.1:5000/LVGROOM/LIGHTSWITCH/5518595",
+                "off_cmd": "http://127.0.0.1:5000/LVGROOM/LIGHTSWITCH/5518604",
+                "method": "GET"
+            },
+            "description": "Living Room Light"
+        }
+    ],
+    "HOMEASSISTANT": {
+        "enable": true,
+        "host": "192.168.1.104",
+        "port": 8123,
+        "password": "your_hass_password",
+        "DEVICES": [
+            {
+                "description": "hass switch by python API",
+                "port": 12350,
+                "entity_id": "switch.fake_hass_switch"
+            }
+        ]
+    }
+}
