@@ -5,11 +5,11 @@ import subprocess,traceback,sys
 app = Flask(__name__)
 
 @app.route('/')
-def say_hello():
+def app_call_webpage():
 	return render_template('index.html')
 
 @app.route('/<string:switch_group_name>/<string:switch_name>/<string:stateCode>', methods=['GET', 'POST'])
-def hello_world(switch_group_name=None,switch_name=None,stateCode=None):
+def app_call(switch_group_name=None,switch_name=None,stateCode=None):
     #switch_group_name, switch_name etc for future use
 
     l_status=200
